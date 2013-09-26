@@ -21,7 +21,7 @@ var args = require('optimist')
       describe: 'Regex matching files to exclude',
     })
     .options('regex_opts', {
-      default: 'gim',
+      default: 'im',
       describe: 'Exclusion regex options',
     })
     .options('https', {
@@ -44,23 +44,22 @@ var dirs = args._.map(function(dir) {
   return path.resolve(process.cwd(), dir);
 });
 var ignore_regex = new RegExp(args.exclude, args.regex_opts);
-
 var config = {
   watch_dirs: dirs.join(' '),  // TODO this will break for dirs with spaces.  fix this in connect-autoreload
   ignore_regex: ignore_regex,
 }
+var app = module.exports = express();
+app.use(autoreload(config));
+
 console.info('\nAdd to your page:');
 console.info('\n\t<script src="%s://localhost:%d/autoreload.js"></script>\n',
             args.https ? 'https' : 'http', args.port);
-
-var app = module.exports = express();
-app.use(autoreload(config));
 
 if (args.https) {
   var options = {
     key: fs.readFileSync(path.resolve(__dirname, args.key)),
     cert: fs.readFileSync(path.resolve(__dirname, args.cert)),
-  }
+  };
   https.createServer(options, app).listen(args.port);
   console.warn('*** To use the above script, you must go to https://localhost:%d and whitelist the SSL certificate, or provide your own with the --key and --cert options.\n'.red, args.port);
 } else {
