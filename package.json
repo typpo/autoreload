@@ -9,7 +9,8 @@
     "express" : ">=3.4.0",
     "connect-autoreload": "latest",
     "optimist": "~0.6.0",
-    "process": "~0.5.1"
+    "process": "~0.5.1",
+    "colors": "~0.6.2"
   },
   "repository": "https://github.com/typpo/autoreload.git",
   "license" : "MIT",
