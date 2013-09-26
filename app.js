@@ -15,7 +15,7 @@ var args = require('optimist')
       default: '\\.sw[poax]$',   // vim extensions
     })
     .options('regex_opts', {
-      default: 'gi',
+      default: 'gim',
     })
     .demand(1)   // require at least one non-option arg
     .argv
@@ -23,12 +23,11 @@ var args = require('optimist')
 var dirs = args._.map(function(dir) {
   return path.resolve(process.cwd(), dir);
 });
-var ignore_regex = args.exclude ?
-  new RegExp(args.exclude, args.regex_opts) : new RegExp('');
+var ignore_regex = new RegExp(args.exclude, args.regex_opts);
 
 var config = {
   watch_dirs: dirs.join(' '),  // TODO this will break for dirs with spaces.  fix this in connect-autoreload
-  ignore_regex: args.exclude,
+  ignore_regex: ignore_regex,
 }
 console.log(config.watch_dirs)
 

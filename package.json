@@ -13,5 +13,6 @@
   },
   "repository": "https://github.com/typpo/autoreload.git",
   "license" : "MIT",
-  "main": "./index.js"
+  "main": "./app.js",
+  "bin": "./app.js"
 }
