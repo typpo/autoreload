@@ -1,0 +1,17 @@
+{
+  "name": "autoreload",
+  "preferGlobal": true,
+  "description": "Autoreload server - watches your files for changes and handles client polling.",
+  "version": "0.0.1",
+  "author": "Ian Webster <ian_npm@ianww.com>",
+  "engines": ["node"],
+  "dependencies": {
+    "express" : ">=3.4.0",
+    "connect-autoreload": "latest",
+    "optimist": "~0.6.0",
+    "process": "~0.5.1"
+  },
+  "repository": "https://github.com/typpo/autoreload.git",
+  "license" : "MIT",
+  "main": "./index.js"
+}
