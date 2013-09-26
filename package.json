@@ -2,7 +2,7 @@
   "name": "autoreload",
   "preferGlobal": true,
   "description": "Autoreload server - watches your files for changes and handles client polling.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Ian Webster <ian_npm@ianww.com>",
   "engines": ["node"],
   "dependencies": {
