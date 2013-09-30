@@ -17,7 +17,7 @@ var args = require('optimist')
     })
     .options('exclude', {
       alias: 'e',
-      default: '\\.sw[poax]$',   // vim extensions
+      default: '\\.sw[poaxn]$',   // vim extensions
       describe: 'Regex matching files to exclude',
     })
     .options('regex_opts', {
