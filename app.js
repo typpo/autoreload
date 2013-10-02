@@ -40,6 +40,7 @@ var args = require('optimist')
     .demand(1)   // require at least one non-option arg
     .argv
 
+args.https = args.https || (args.key && args.cert);
 var dirs = args._.map(function(dir) {
   return path.resolve(process.cwd(), dir);
 });
@@ -55,7 +56,7 @@ console.info('\nAdd to your page:');
 console.info('\n\t<script src="%s://localhost:%d/autoreload.js"></script>\n',
             args.https ? 'https' : 'http', args.port);
 
-if (args.https || (args.key && args.cert)) {
+if (args.https) {
   var options = {
     key: fs.readFileSync(path.resolve(__dirname, args.key)),
     cert: fs.readFileSync(path.resolve(__dirname, args.cert)),
