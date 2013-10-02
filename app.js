@@ -48,7 +48,7 @@ var ignore_regex = new RegExp(args.exclude, args.regex_opts);
 var config = {
   watch_dirs: dirs.join(' '),  // TODO this will break for dirs with spaces.  fix this in connect-autoreload
   ignore_regex: ignore_regex,
-}
+};
 var app = module.exports = express();
 app.use(autoreload(config));
 
