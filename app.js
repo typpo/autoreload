@@ -62,7 +62,9 @@ if (args.https) {
     cert: fs.readFileSync(path.resolve(__dirname, args.cert)),
   };
   https.createServer(options, app).listen(args.port);
-  console.warn('*** To use the above script, you must go to https://localhost:%d and whitelist the SSL certificate, or provide your own with the --key and --cert options.\n'.red, args.port);
+  if (!args.cert || !args.key) {
+    console.warn('*** To use the above script, you must go to https://localhost:%d and whitelist the SSL certificate, or provide your own with the --key and --cert options.\n'.red, args.port);
+  }
 } else {
   app.listen(args.port, null);
 }
