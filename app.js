@@ -55,7 +55,7 @@ console.info('\nAdd to your page:');
 console.info('\n\t<script src="%s://localhost:%d/autoreload.js"></script>\n',
             args.https ? 'https' : 'http', args.port);
 
-if (args.https) {
+if (args.https || (args.key && args.cert)) {
   var options = {
     key: fs.readFileSync(path.resolve(__dirname, args.key)),
     cert: fs.readFileSync(path.resolve(__dirname, args.cert)),
