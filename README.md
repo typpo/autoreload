@@ -1,7 +1,7 @@
 autoreload
 ==========
 
-This is an easy-to-use command-line "automatic reload" or "live reload" script for developers.  It tells your browser to reload when files have changed.
+This is an easy-to-use command-line "automatic reload" or "live reload" script for developers.  It tells your browser to reload when files have changed.  It's based on [connect-autoreload](https://github.com/typpo/connect-autoreload).
 
 Installation:
 
