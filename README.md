@@ -24,7 +24,9 @@ Options:
       --key          SSL key                          [default: dummy SSL key]
       --cert         SSL cert                         [default: dummy SSL cert]
 
-Once running, autoreload will output the path to a script to include on your page.
+**Once running, autoreload will output the path to a script to include on your page**, for example:
+
+   <script src="http://localhost:60000/autoreload.js"></script>
 
 ## SSL
 
