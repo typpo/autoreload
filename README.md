@@ -15,6 +15,16 @@ For example, the following will watch 3 directories and a file for changes:
 
     $ autoreload js css templates/main settings.py
 
+Once running, it will print a script tag to include on your page:
+
+     <script src="http://localhost:60000/autoreload.js"></script>
+
+And call AutoReload.Watch() to begin watching for changes:
+
+     <script>
+       AutoReload.Watch();
+     </script>
+
 Options:
 
       --port, -p     Port server listens on           [default: 60000]
@@ -24,9 +34,7 @@ Options:
       --key          SSL key                          [default: dummy SSL key]
       --cert         SSL cert                         [default: dummy SSL cert]
 
-**Once running, autoreload will output a script tag to include on your page**, for example:
-
-     <script src="http://localhost:60000/autoreload.js"></script>
+To stop watching for changes, call `AutoReload.Stop()`.
 
 ## SSL
 
@@ -41,7 +49,7 @@ You have three options if your development server requires SSL.
 ## MIT License
 
 ```
-Copyright (c) 2013 Ian Webster
+Copyright (c) 2013 Room 77, Ian Webster
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
