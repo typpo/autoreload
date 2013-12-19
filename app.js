@@ -53,8 +53,9 @@ var app = module.exports = express();
 app.use(autoreload(config));
 
 console.info('\nAdd to your page:');
-console.info('\n\t<script src="%s://localhost:%d/autoreload.js"></script>\n',
+console.info('\n\t<script src="%s://localhost:%d/autoreload.js"></script>',
             args.https ? 'https' : 'http', args.port);
+console.info('\nThen call AutoReload.Watch()\n');
 
 if (args.https) {
   var options = {
