@@ -7,15 +7,11 @@ Installation:
 
     npm install -g autoreload
 
-Usage:
-
-    $ autoreload paths_to_watch..
-
-For example, the following will watch 3 directories and a file for changes:
+Directories or files are valid arguments.  For example, to watch 3 directories and a file for changes:
 
     $ autoreload js css templates/main settings.py
 
-Once running, it will print a script tag to include on your page:
+Once running, autoreload will print a script tag to include on your page:
 
      <script src="http://localhost:60000/autoreload.js"></script>
 
