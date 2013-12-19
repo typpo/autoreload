@@ -3,13 +3,17 @@ autoreload
 
 This is an easy-to-use command-line "automatic reload" or "live reload" script for developers.  It tells your browser to reload when files have changed.  It's based on [connect-autoreload](https://github.com/typpo/connect-autoreload).
 
-Installation:
+Get it with npm:  `npm install -g autoreload`
+    
+# Usage
 
-    npm install -g autoreload
+### Run autoreload
 
-Directories or files are valid arguments.  For example, to watch 3 directories and a file for changes:
+Directories or files are valid arguments.  For example, to recursively watch 3 directories and a file for changes:
 
     $ autoreload js css templates/main settings.py
+    
+### Add js to your page
 
 Once running, autoreload will print a script tag to include on your page:
 
@@ -20,8 +24,10 @@ And call AutoReload.Watch() to begin watching for changes:
      <script>
        AutoReload.Watch();
      </script>
+     
+### Details
 
-Options:
+autoreload options:
 
       --port, -p     Port server listens on           [default: 60000]
       --exclude, -e  Regex matching files to exclude  [default: "\\.sw[poaxn]$"]
