@@ -1,7 +1,7 @@
 autoreload
 ==========
 
-This is an easy-to-use command-line "automatic reload" or "live reload" script for developers.  It tells your browser to reload when files have changed.  It's based on [connect-autoreload](https://github.com/typpo/connect-autoreload).
+This is an easy-to-use command-line "automatic reload" or "live reload" script for developers.  It makes your browser reload when you edit files.  It's based on [connect-autoreload](https://github.com/typpo/connect-autoreload).
 
 Get it with npm:  `npm install -g autoreload`
     
@@ -47,6 +47,10 @@ You have three options if your development server requires SSL.
    2. Use the `--https` option and load the script directly in your browser to accept the dummy SSL certificate.
 
    3. Provide your own SSL certificate using `--key` and `--cert`.
+
+## jQuery dependency
+
+autoreload.js assumes jquery is available in our page.  This issue is tracked [here](https://github.com/typpo/autoreload/issues/1).
 
 ## MIT License
 
