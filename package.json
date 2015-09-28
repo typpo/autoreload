@@ -7,7 +7,7 @@
   "engines": ["node"],
   "dependencies": {
     "express" : ">=3.4.0",
-    "connect-autoreload": "latest",
+    "connect-autoreload": ">=0.0.3",
     "optimist": "~0.6.0",
     "process": "~0.5.1",
     "colors": "~0.6.2"
