@@ -15,6 +15,11 @@ var args = require('optimist')
       default: 60000,
       describe: 'Port server listens on',
     })
+    .options('delay', {
+      alias: 'd',
+      default: 150,
+      describe: 'Delay before autoreloading',
+    })
     .options('exclude', {
       alias: 'e',
       default: '\\.sw[poaxn]$',   // vim extensions
@@ -47,6 +52,7 @@ var ignore_regex = new RegExp(args.exclude, args.regex_opts);
 var config = {
   watch_dirs: dirs.join(' '),  // TODO this will break for dirs with spaces.  fix this in connect-autoreload
   ignore_regex: ignore_regex,
+  delay: args.delay,
 };
 var app = module.exports = express();
 app.use(autoreload(config));
