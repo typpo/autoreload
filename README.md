@@ -13,6 +13,10 @@ Directories or files are valid arguments.  For example, to recursively watch 3 d
 
     $ autoreload js css templates/main settings.py
     
+To watch everything in the current directory and below:
+
+    $ autoreload .
+    
 ### Add js to your page
 
 Once running, autoreload will print a script tag to include on your page:
