@@ -40,7 +40,6 @@ var args = require('optimist')
     .demand(1)   // require at least one non-option arg
     .argv
 
-args.https = args.https || (args.key && args.cert);
 var dirs = args._.map(function(dir) {
   return path.resolve(process.cwd(), dir);
 });
