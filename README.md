@@ -52,6 +52,12 @@ You have three options if your development server requires SSL.
 
 autoreload.js assumes jquery is available in our page.  This issue is tracked [here](https://github.com/typpo/autoreload/issues/1).
 
+## Troubleshooting
+
+If you get `Error: watch ENOSPC`, chances are you need to increase your filesystem watches:
+
+`echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p`
+
 ## MIT License
 
 ```
