@@ -4,7 +4,7 @@ autoreload
 This is an easy-to-use command-line "automatic reload" or "live reload" script for developers.  It makes your browser reload when you edit files.  It's based on [connect-autoreload](https://github.com/typpo/connect-autoreload).
 
 Get it with npm:  `npm install -g autoreload`
-    
+
 # Usage
 
 ### Run autoreload
@@ -12,11 +12,11 @@ Get it with npm:  `npm install -g autoreload`
 Directories or files are valid arguments.  For example, to recursively watch 3 directories and a file for changes:
 
     $ autoreload js css templates/main settings.py
-    
+
 To watch everything in the current directory and below:
 
     $ autoreload .
-    
+
 ### Add js to your page
 
 Once running, autoreload will print a script tag to include on your page:
@@ -26,9 +26,9 @@ Once running, autoreload will print a script tag to include on your page:
 And call AutoReload.Watch() to begin watching for changes:
 
      <script>
-       AutoReload.Watch();
+       AutoReload.Watch('localhost:60000');   // or some other host/port
      </script>
-     
+
 ### Details
 
 autoreload options:
